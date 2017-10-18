@@ -17,22 +17,22 @@ export const receiveSessionErrors = errors => ({
 
 //async actions
 
-export const signup = user => dispatch => (
+export const signup = user => dispatch => {
   return APIUtil.signup(user)
     .then(user => dispatch(receiveCurrentUser(user)),
-    error => dispatch(receiveSessionErrors(error.responeJSON));
+    error => dispatch(receiveSessionErrors(error.responeJSON))
   );
-);
+};
 
-export const signin = user => dispatch => (
+export const login = user => dispatch => {
   return APIUtil.login(user)
     .then(user => dispatch(receiveCurrentUser(user)),
-    error =>dispatch(receiveSessionErrors(error.responeJSON));
+    error => dispatch(receiveSessionErrors(error.responeJSON))
   );
-);
+};
 
-export const logout = () => dispatch => (
+export const logout = () => dispatch => {
   return APIUtil.logout().then(
     () => dispatch(receiveCurrentUser(null))
   )
-);
+};

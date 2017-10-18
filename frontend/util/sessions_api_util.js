@@ -3,7 +3,7 @@ export const signup = user => (
     method: 'POST',
     url: '/api/user',
     data: user,
-  });
+  })
 );
 
 export const login = user => (
@@ -11,7 +11,7 @@ export const login = user => (
     method: 'POST',
     url: 'api/session',
     data: user,
-  });
+  })
 );
 
 export const logout = () => (
